@@ -166,69 +166,64 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  min-height: 500px;
+  min-height: 540px;
+  transform: translateY(-24px);
+}
+
+/* Main image clipped inside a large circle */
+.hero-blob-main {
+  position: relative;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--accent);
+  z-index: 2;
+  flex-shrink: 0;
 }
 
 .hero-student {
-  position: relative;
-  z-index: 2;
   width: 100%;
-  max-width: 900px;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  object-position: top center;
 }
 
-/* Decorative Shapes */
-.hero-shape {
+/* Decorative orbs */
+.hero-orb {
   position: absolute;
   border-radius: 50%;
-  z-index: 1;
 }
 
-.hero-shape-1 {
-  width: 300px;
-  height: 300px;
-  background-color: var(--accent);
-  top: 10%;
-  right: 5%;
-  opacity: 0.9;
-}
-
-.hero-shape-2 {
-  width: 200px;
-  height: 200px;
+/* Small solid navy orb — overlaps bottom-left of main circle */
+.hero-orb-sm {
+  width: 180px;
+  height: 180px;
   background-color: var(--primary);
-  bottom: 15%;
-  left: 10%;
-  opacity: 0.9;
-}
-
-.hero-shape-3 {
-  width: 120px;
-  height: 120px;
-  background-color: var(--white);
-  top: 50%;
-  left: 0;
-  border: 3px solid var(--primary);
-}
-
-/* Doodles */
-.hero-doodle {
-  position: absolute;
+  bottom: 60px;
+  left: calc(50% - 320px);
   z-index: 3;
 }
 
-.hero-doodle-1 {
-  top: 5%;
-  right: 15%;
+/* Outline-only circle — tucked just above navy orb */
+.hero-orb-outline {
   width: 100px;
+  height: 100px;
+  background: transparent;
+  border: 3px solid var(--primary);
+  bottom: 225px;
+  left: calc(50% - 355px);
+  z-index: 1;
 }
 
-.hero-doodle-2 {
-  bottom: 20%;
-  right: 5%;
-  width: 50px;
+/* Tiny accent dot — right next to navy orb */
+.hero-orb-dot {
+  width: 52px;
+  height: 52px;
+  background-color: var(--accent);
+  bottom: 48px;
+  left: calc(50% - 155px);
+  z-index: 4;
 }
 
 /* Divider */
@@ -732,20 +727,10 @@ body {
     order: 0;
     min-height: 400px;
   }
-  
-  .hero-shape-1 {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .hero-shape-2 {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .hero-shape-3 {
-    width: 80px;
-    height: 80px;
+
+  .hero-blob-main {
+    width: 320px;
+    height: 320px;
   }
   
   .about {
@@ -852,26 +837,25 @@ body {
   .hero-image {
     min-height: 300px;
   }
-  
-  .hero-student {
-    max-width: 280px;
+
+  .hero-blob-main {
+    width: 260px;
+    height: 260px;
   }
-  
-  .hero-shape-1 {
-    width: 150px;
-    height: 150px;
+
+  .hero-orb-sm {
+    width: 80px;
+    height: 80px;
+    left: calc(50% - 170px);
   }
-  
-  .hero-shape-2 {
-    width: 100px;
-    height: 100px;
+
+  .hero-orb-outline {
+    width: 55px;
+    height: 55px;
+    right: calc(50% - 185px);
   }
-  
-  .hero-shape-3 {
-    display: none;
-  }
-  
-  .hero-doodle {
+
+  .hero-orb-dot {
     display: none;
   }
   
@@ -892,5 +876,247 @@ body {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+}
+
+/* ========================= */
+/* Tutor Application Page    */
+/* ========================= */
+
+.tutor-page {
+  min-height: 100vh;
+  padding: 10rem 4rem 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tutor-form-container {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.tutor-form-title {
+  font-family: var(--font-title);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--primary);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.tutor-form-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--primary);
+  opacity: 0.75;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+/* Perks list */
+.tutor-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.perk {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.perk-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+/* Form */
+.tutor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(21, 50, 67, 0.06);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.form-input {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--primary);
+  padding: 0.9rem 1rem;
+  border: 2px solid rgba(21, 50, 67, 0.12);
+  border-radius: 10px;
+  background-color: var(--background);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(240, 207, 101, 0.25);
+}
+
+.form-input::placeholder {
+  color: var(--primary);
+  opacity: 0.35;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23153243' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  cursor: pointer;
+}
+
+/* File upload */
+.form-file-wrapper {
+  position: relative;
+}
+
+.form-file-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.form-file-display {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  border: 2px dashed rgba(21, 50, 67, 0.18);
+  border-radius: 10px;
+  background-color: var(--background);
+  color: var(--primary);
+  opacity: 0.6;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.form-file-wrapper:hover .form-file-display {
+  border-color: var(--accent);
+  opacity: 0.85;
+}
+
+/* Submit */
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary);
+  background-color: var(--accent);
+  padding: 1.1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.form-submit:hover {
+  filter: brightness(1.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(21, 50, 67, 0.15);
+}
+
+/* Success state */
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 3rem 1rem;
+}
+
+.form-success h3 {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--primary);
+}
+
+.form-success p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+/* Tutor page responsive */
+@media (max-width: 1024px) {
+  .tutor-form-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .tutor-page {
+    padding: 8rem 2rem 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .tutor-page {
+    padding: 7rem 1.5rem 3rem;
+  }
+
+  .tutor-form {
+    padding: 2rem;
+  }
+
+  .tutor-perks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }

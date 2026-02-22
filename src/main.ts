@@ -14,7 +14,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div class="hero-content">
       <h1 class="hero-title"><span id="typed-text"></span><span class="cursor">|</span></h1>
       <p class="hero-subtitle">
-        Personalized tutoring that meets students where they are. Build confidence and achieve your academic goals.
+        Personalized tutoring for students who want to do more. Build confidence and achieve your academic goals.
       </p>
       <button class="hero-cta" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
         Get Started
@@ -24,20 +24,12 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </button>
     </div>
     <div class="hero-image">
-      <div class="hero-shape hero-shape-1"></div>
-      <div class="hero-shape hero-shape-2"></div>
-      <div class="hero-shape hero-shape-3"></div>
-      <img src="/images/hero-main.png" alt="Happy student" class="hero-student">
-      <div class="hero-doodle hero-doodle-1">
-        <svg viewBox="0 0 100 60" fill="none" stroke="var(--primary)" stroke-width="3">
-          <path d="M10 30 Q25 10 40 30 Q55 50 70 30 Q85 10 95 30"/>
-        </svg>
+      <div class="hero-blob-main">
+        <img src="/images/hero-main.png" alt="Happy student" class="hero-student">
       </div>
-      <div class="hero-doodle hero-doodle-2">
-        <svg viewBox="0 0 60 60" fill="none" stroke="var(--primary)" stroke-width="3">
-          <path d="M30 5 L35 20 L50 20 L38 30 L43 45 L30 35 L17 45 L22 30 L10 20 L25 20 Z"/>
-        </svg>
-      </div>
+      <div class="hero-orb hero-orb-sm"></div>
+      <div class="hero-orb hero-orb-outline"></div>
+      <div class="hero-orb hero-orb-dot"></div>
     </div>
   </section>
 
@@ -50,13 +42,14 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <section class="about">
     <span class="about-label">Our Mission</span>
     <div class="about-content">
-      <h2>Education that meets students where they are</h2>
+      <h2>We meet students where they are</h2>
       <p>
-        At Cove Learning, we understand that every student learns differently. 
-        Our approach combines proven teaching methodologies with personalized attention, 
-        creating a supportive environment where students can thrive academically and develop 
-        a genuine love for learning. We work with students across all subjects and grade levels, 
-        from foundational skills to advanced coursework.
+        Cove Learning was founded in UC San Diego's Geisel library on a simple belief: 
+        that every young student deserves the same guidance and resources that made all the difference for us.
+
+        We're driven by the idea that no student should to navigate their academic journey alone.
+        By pairing students with dedicated mentors and proven learning strategies, we create an environment 
+        where we can not only reinforce academic concepts, but hone the skill of learning itself.
       </p>
     </div>
   </section>
@@ -101,7 +94,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           </svg>
         </div>
         <h3 class="service-title">College & Test Prep</h3>
-        <p class="service-desc">SAT, ACT, and AP exam preparation alongside college application guidance. We help students present their best selves and reach their dream schools.</p>
+        <p class="service-desc">Personalized mentoring for long-term academic and career success alongside college application guidance. We help students navigate their surrounding resources, build real-world skills, and reach their full potential. </p>
       </div>
       <div class="service-card">
         <div class="service-icon">
@@ -113,7 +106,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           </svg>
         </div>
         <h3 class="service-title">K-12 Academic Tutoring</h3>
-        <p class="service-desc">From foundational reading and math to advanced high school coursework. We meet students where they are and build lasting understanding across all subjects.</p>
+        <p class="service-desc">From foundational reading and math to advanced high school coursework. We meet students where they are and build lasting understanding across all subjects. We also help students navigate their surrounding resources, build real-world skills, and reach their full academic potential.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">
@@ -126,7 +119,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           </svg>
         </div>
         <h3 class="service-title">Digital & Tech Skills</h3>
-        <p class="service-desc">Programming fundamentals, digital literacy, and practical tech skills for the modern world. Prepare for tomorrow's opportunities today.</p>
+        <p class="service-desc">Programming fundamentals, digital literacy, and responsible AI fluency for a world where these skills are no longer optional. Prepare for a future where knowing how to think alongside AI is just as important as knowing how to think for yourself.</p>
       </div>
     </div>
   </section>
@@ -146,10 +139,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           <h3 class="panel-name">Ryan</h3>
           <p class="panel-role">Co-Founder & Lead Tutor</p>
           <p class="panel-bio">
-            With a passion for making complex concepts accessible, Ryan brings years of 
-            experience in mathematics and sciences. His patient approach and ability to 
-            connect with students of all ages has helped countless learners overcome 
-            academic challenges and achieve their goals.
+            Ryan has been tutoring students across various subjects since middle school. 
+            Beyond helping students master their current coursework, he is deeply committed 
+            to developing their fundamental study skills and teaching them how to learn effectively. 
+            He strives to provide a patient, encouraging environment that helps students overcome 
+            immediate challenges and build their lifelong academic confidence.
           </p>
         </div>
       </div>
@@ -158,10 +152,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           <h3 class="panel-name">Jacob</h3>
           <p class="panel-role">Co-Founder & Lead Tutor</p>
           <p class="panel-bio">
-            Jacob believes that the best learning happens when students feel supported 
-            and empowered. Specializing in humanities and writing, he helps students 
-            develop critical thinking skills and confidence in their abilities. His 
-            engaging teaching style makes every session productive and enjoyable.
+            Jacob has taught, managed, and created coding enrichment programs for K-8 students since 2022. 
+            As a lifelong student currently navigating university-level data science himself, he has firsthand 
+            experience with the struggles that come with unfamiliar concepts. His personal goal with Cove Learning 
+            is to provide guidance and personalized support so that any student can build the confidence to tackle 
+            these challenges head-on.
           </p>
         </div>
         <div class="panel-image">
@@ -180,11 +175,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <p class="contact-subtitle">
           Reach out today to schedule a free consultation and discover how we can help.
         </p>
-        <button class="contact-btn" onclick="window.location.href='mailto:hello@covelearning.com'">
-          Contact Us
+        <button class="contact-btn" onclick="window.location.href='/parents/'">
+          Get Started
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
+            <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
         </button>
       </div>
@@ -195,7 +189,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <p class="contact-subtitle">
           We're always looking for passionate educators to join our team.
         </p>
-        <button class="contact-btn contact-btn-outline" onclick="window.location.href='#'">
+        <button class="contact-btn contact-btn-outline" onclick="window.location.href='/tutors/'">
           Interest Form
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
