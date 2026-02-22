@@ -301,3 +301,37 @@ document.querySelectorAll('.service-card').forEach(card => {
 document.querySelectorAll('.team-panel').forEach(panel => {
   observer.observe(panel)
 })
+
+// Hero entrance + mouse parallax
+const blobMain = document.querySelector('.hero-blob-main') as HTMLElement
+const orbs = document.querySelectorAll<HTMLElement>('.hero-orb')
+const parallaxEls = [blobMain, ...Array.from(orbs)]
+const speeds = [8, 20, 28, 16]
+
+// Trigger entrance
+requestAnimationFrame(() => {
+  blobMain?.classList.add('entered')
+  orbs.forEach(orb => orb.classList.add('entered'))
+})
+
+// After entrance settles, enable smooth mouse tracking via CSS vars
+let mx = 0, my = 0, tx = 0, ty = 0
+
+document.addEventListener('mousemove', (e) => {
+  tx = (e.clientX / window.innerWidth - 0.5) * 2
+  ty = (e.clientY / window.innerHeight - 0.5) * 2
+})
+
+function tick() {
+  mx += (tx - mx) * 0.08
+  my += (ty - my) * 0.08
+
+  parallaxEls.forEach((el, i) => {
+    if (!el) return
+    const s = speeds[i] ?? 12
+    el.style.setProperty('--mx', `${mx * s}px`)
+    el.style.setProperty('--my', `${my * s}px`)
+  })
+  requestAnimationFrame(tick)
+}
+requestAnimationFrame(tick)

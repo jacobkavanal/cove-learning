@@ -180,6 +180,15 @@ body {
   background-color: var(--accent);
   z-index: 2;
   flex-shrink: 0;
+  box-shadow: 0 20px 60px rgba(21, 50, 67, 0.15);
+  opacity: 0;
+  transform: translateY(-80px) scale(0.85);
+}
+
+.hero-blob-main.entered {
+  opacity: 1;
+  transform: translate(var(--mx, 0), var(--my, 0)) scale(1);
+  transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
 .hero-student {
@@ -193,9 +202,17 @@ body {
 .hero-orb {
   position: absolute;
   border-radius: 50%;
+  opacity: 0;
+  transform: translateY(-80px) scale(0.7);
 }
 
-/* Small solid navy orb — overlaps bottom-left of main circle */
+.hero-orb.entered {
+  opacity: 1;
+  transform: translate(var(--mx, 0), var(--my, 0)) scale(1);
+  transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+/* Small solid navy orb */
 .hero-orb-sm {
   width: 180px;
   height: 180px;
@@ -203,9 +220,11 @@ body {
   bottom: 60px;
   left: calc(50% - 320px);
   z-index: 3;
+  box-shadow: 0 12px 40px rgba(21, 50, 67, 0.25);
+  transition-delay: 0.12s;
 }
 
-/* Outline-only circle — tucked just above navy orb */
+/* Outline-only circle */
 .hero-orb-outline {
   width: 100px;
   height: 100px;
@@ -214,9 +233,10 @@ body {
   bottom: 225px;
   left: calc(50% - 355px);
   z-index: 1;
+  transition-delay: 0.24s;
 }
 
-/* Tiny accent dot — right next to navy orb */
+/* Tiny accent dot */
 .hero-orb-dot {
   width: 52px;
   height: 52px;
@@ -224,6 +244,8 @@ body {
   bottom: 48px;
   left: calc(50% - 155px);
   z-index: 4;
+  box-shadow: 0 8px 25px rgba(240, 207, 101, 0.3);
+  transition-delay: 0.36s;
 }
 
 /* Divider */
