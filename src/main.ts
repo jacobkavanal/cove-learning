@@ -47,7 +47,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         Cove Learning was founded in UC San Diego's Geisel library on a simple belief: 
         that every young student deserves the same guidance and resources that made all the difference for us.
 
-        We're driven by the idea that no student should to navigate their academic journey alone.
+        We're driven by the idea that no student should navigate their academic journey alone.
         By pairing students with dedicated mentors and proven learning strategies, we create an environment 
         where we can not only reinforce academic concepts, but hone the skill of learning itself.
       </p>
