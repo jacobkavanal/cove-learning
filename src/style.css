@@ -264,9 +264,9 @@ body {
 /* About Section */
 .about {
   padding: 8rem max(4rem, calc((100% - 1400px) / 2 + 4rem));
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
   background-color: var(--white);
 }
 
@@ -280,15 +280,21 @@ body {
   opacity: 0.5;
 }
 
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
 .about-content h2 {
   font-family: var(--font-title);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
   font-weight: 400;
   color: var(--primary);
-  line-height: 1.2;
-  margin-bottom: 2rem;
+  line-height: 1.15;
   opacity: 0;
-  transform: translateX(60px);
+  transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
@@ -296,19 +302,18 @@ body {
   font-size: 1.125rem;
   line-height: 1.8;
   opacity: 0;
-  max-width: 700px;
-  transform: translateX(60px);
+  transform: translateY(30px);
   transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
 }
 
 .about-content.visible h2 {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .about-content.visible p {
   opacity: 0.8;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 /* How It Works Section */
@@ -555,24 +560,16 @@ body {
 }
 
 .panel-image {
-  min-height: 300px;
-  background-color: var(--background);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
-.panel-image-placeholder {
-  width: 120px;
-  height: 120px;
-  background-color: var(--primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-title);
-  font-size: 3rem;
-  color: var(--white);
+.panel-image-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+  display: block;
 }
 
 .panel-content {
@@ -756,10 +753,15 @@ body {
   }
   
   .about {
-    grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 6rem 2rem;
   }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   
   .how-it-works {
     padding: 4rem 2rem;
@@ -782,28 +784,28 @@ body {
   .team {
     padding: 4rem 2rem 6rem;
   }
-  
+
   .team-panel {
     grid-template-columns: 1fr;
   }
-  
+
   .panel-right {
     grid-template-columns: 1fr;
   }
-  
+
   .panel-right .panel-content {
     order: 1;
   }
-  
+
   .panel-right .panel-image {
     order: 0;
   }
-  
+
   .panel-left,
   .panel-right {
     transform: translateY(30px);
   }
-  
+
   .panel-content {
     padding: 2rem;
   }
@@ -886,9 +888,6 @@ body {
     font-size: 0.875rem;
   }
   
-  .team-member {
-    padding: 2rem;
-  }
   
   .footer {
     padding: 1.5rem;

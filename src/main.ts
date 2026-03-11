@@ -133,16 +133,16 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div class="team-panels">
       <div class="team-panel panel-left">
         <div class="panel-image">
-          <div class="panel-image-placeholder">R</div>
+          <img src="/images/ryan.jpg" alt="Ryan" class="panel-image-photo" />
         </div>
         <div class="panel-content">
           <h3 class="panel-name">Ryan</h3>
           <p class="panel-role">Co-Founder & Lead Tutor</p>
           <p class="panel-bio">
-            Ryan has been tutoring students across various subjects since middle school. 
-            Beyond helping students master their current coursework, he is deeply committed 
-            to developing their fundamental study skills and teaching them how to learn effectively. 
-            He strives to provide a patient, encouraging environment that helps students overcome 
+            Ryan has been tutoring students across various subjects since middle school.
+            Beyond helping students master their current coursework, he is deeply committed
+            to developing their fundamental study skills and teaching them how to learn effectively.
+            He strives to provide a patient, encouraging environment that helps students overcome
             immediate challenges and build their lifelong academic confidence.
           </p>
         </div>
@@ -152,15 +152,15 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           <h3 class="panel-name">Jacob</h3>
           <p class="panel-role">Co-Founder & Lead Tutor</p>
           <p class="panel-bio">
-            Jacob has taught, managed, and created coding enrichment programs for K-8 students since 2022. 
-            As a lifelong student currently navigating university-level data science himself, he has firsthand 
-            experience with the struggles that come with unfamiliar concepts. His personal goal with Cove Learning 
-            is to provide guidance and personalized support so that any student can build the confidence to tackle 
+            Jacob has taught, managed, and created coding enrichment programs for K-8 students since 2022.
+            As a lifelong student currently navigating university-level data science himself, he has firsthand
+            experience with the struggles that come with unfamiliar concepts. His personal goal with Cove Learning
+            is to provide guidance and personalized support so that any student can build the confidence to tackle
             these challenges head-on.
           </p>
         </div>
         <div class="panel-image">
-          <div class="panel-image-placeholder">J</div>
+          <img src="/images/jacob.jpg" alt="Jacob" class="panel-image-photo" />
         </div>
       </div>
     </div>

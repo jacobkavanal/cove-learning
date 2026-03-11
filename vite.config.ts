@@ -2,6 +2,9 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
+  server: {
+    host: true, // listen on 0.0.0.0 so you can open from your phone on the same WiFi
+  },
   build: {
     rollupOptions: {
       input: {
